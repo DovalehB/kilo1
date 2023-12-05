@@ -40,8 +40,9 @@ impl eframe::App for App {
 	    let duration_since_midnight = self.time - midnight;
 	    let seconds_since_midnight = duration_since_midnight.num_seconds() as f64;
 	    self.time = Local::now();
-	    ui.centered_and_justified(|ui| {
-		ui.label(egui::RichText::new((seconds_since_midnight / 1000.0).to_string()).size(50.0).color(egui::Color32::WHITE));
+	    ui.with_layout(egui::Layout::top_down_justified(egui::Align::Center), |ui| {
+		ui.label(egui::RichText::new((seconds_since_midnight / 1000.0).to_string()).size(100).color(egui::Color32::WHITE));
+		ui.label(egui::RichText::new("  kiloseconds since midnight").size(20).color(egui::Color32::WHITE));
 	    });
 	    ui.ctx().request_repaint();
 	});
