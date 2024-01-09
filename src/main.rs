@@ -32,7 +32,7 @@ impl eframe::App for App {
 	egui::CentralPanel::default().show(ctx, |ui| {
 	    let mut fonts = FontDefinitions::default();
 	    fonts.font_data.insert("JBMono".to_owned(),
-				   FontData::from_static(include_bytes!("/usr/share/fonts/TTF/JetBrainsMonoNerdFontMono-Regular.ttf"))); // .ttf and .otf supported
+				//   FontData::from_static(include_bytes!("/usr/share/fonts/TTF/JetBrainsMonoNerdFontMono-Regular.ttf"))); // .ttf and .otf supported
 	    fonts.families.get_mut(&FontFamily::Proportional).unwrap()
 		.insert(0, "JBMono".to_owned());
 	    ctx.set_fonts(fonts);
